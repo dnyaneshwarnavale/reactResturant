@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 import { AppBar, Toolbar, Typography,Box, IconButton, Drawer, Divider } from '@mui/material'
-import FastfoodIcon from '@mui/icons-material/Fastfood';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import "../../styles/HeaderStyles.css";
 import MenuIcon from '@mui/icons-material/Menu';
+import logonew from '../../images/logo.svg'
 
 
 const Header = () => {
@@ -17,16 +17,17 @@ const handlerDrawerToggle = () =>{
 const drawer =(
   <Box onClick={handlerDrawerToggle} sx={{textAlign:'center'}}>
          <Typography color={'goldenrod'} variant='h6' component='div' sx={{flexGrow:1, mr:2}} >
-            <FastfoodIcon></FastfoodIcon>
-           My Hotel
+
+         <img src={logonew} alt='logo' height={'70'} width={'250'}></img>
+
         </Typography>
   
         <Divider></Divider>
           <ul className='mobile-navigation'>
-            <li> <Link to={'/'}> Home </Link> </li>
-            <li> <Link to={'/menu'}> Menu </Link> </li>
-            <li> <Link to={'/about'}> About </Link> </li>
-            <li> <Link to={'/contact'}> Contact </Link> </li>
+            <li> <NavLink activeClassName="active" to={'/'}> Home </NavLink> </li>
+            <li> <NavLink to={'/menu'}> Menu </NavLink> </li>
+            <li> <NavLink to={'/about'}> About </NavLink> </li>
+            <li> <NavLink to={'/contact'}> Contact </NavLink> </li>
           </ul>
   
 
@@ -42,16 +43,15 @@ const drawer =(
           <MenuIcon></MenuIcon>
         </IconButton>
         <Typography color={'goldenrod'} variant='h6' component='div' sx={{flexGrow:1}} >
-            <FastfoodIcon></FastfoodIcon>
-           My Hotel
+           <img src={logonew} alt='logo' height={'70'} width={'250'}></img>
         </Typography>
   
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
           <ul className='navigation-menu'>
-            <li> <Link to={'/'}> Home </Link> </li>
-            <li> <Link to={'/menu'}> Menu </Link> </li>
-            <li> <Link to={'/about'}> About </Link> </li>
-            <li> <Link to={'/contact'}> Contact </Link> </li>
+            <li> <NavLink activeClassName="active" to={'/'}> Home </NavLink> </li>
+            <li> <NavLink to={'/menu'}> Menu </NavLink> </li>
+            <li> <NavLink to={'/about'}> About </NavLink> </li>
+            <li> <NavLink to={'/contact'}> Contact </NavLink> </li>
           </ul>
         </Box>
       </Toolbar>
@@ -70,7 +70,7 @@ const drawer =(
         </Drawer>
 
       </Box>
-      <Box sx={{p: 1}}>  <Toolbar /></Box>
+      <Box>  <Toolbar /></Box>
      
    </Box>
    
